@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="alert-box" id="alert">
+      <p id="alert-content">내용</p>
+      <button id="close">닫기</button>
+    </div>
+    <button onclick="alertButton('block','아이디 입력하세요')" id="button1">
+      버튼1
+    </button>
+    <button onclick="alertButton('block','비밀번호 입력하세요')" id="button2">
+      버튼2
+    </button>
+
+    <!--조작할 html 하단에 js를 작성해야 잘 작성된다. -->
+    <script>
+      // function buttonClose(구멍) {
+      //   document.getElementById("alert").style.display = "none";
+      // }
+      // function buttonOpen(구멍) {
+      //   document.getElementById("alert").style.display = "block";
+      // }
+      //function(){}  => 콜백함수(순차적으로 실행하고 싶을 때 사용)
+      document.getElementById("close").addEventListener("click", function () {
+        document.getElementById("alert").style.display = "none";
+      });
+
+      //공통되는 건 묶고 구멍(=파마리터)자리에 가변적인 것 넣기!
+      function alertButton(구멍, t) {
+        document.getElementById("alert").style.display = 구멍;
+        document.getElementById("alert-content").innerHTML = t;
+      }
+    </script>
+  </body>
+</html>
